@@ -14,4 +14,11 @@
     <properties>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.chibao.edu</groupId>
+            <artifactId>order-application-service</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

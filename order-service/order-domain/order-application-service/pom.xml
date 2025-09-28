@@ -14,4 +14,11 @@
     <properties>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.chibao.edu</groupId>
+            <artifactId>order-domain-core</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

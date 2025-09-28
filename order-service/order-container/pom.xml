@@ -14,4 +14,27 @@
     <properties>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.chibao.edu</groupId>
+            <artifactId>order-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.chibao.edu</groupId>
+            <artifactId>order-data-access</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.chibao.edu</groupId>
+            <artifactId>order-application-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.chibao.edu</groupId>
+            <artifactId>order-domain-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.chibao.edu</groupId>
+            <artifactId>order-messaging</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

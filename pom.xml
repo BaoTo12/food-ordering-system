@@ -19,6 +19,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>order-service</module>
+        <module>common</module>
     </modules>
 
     <properties>
@@ -72,6 +73,11 @@
             <dependency>
                 <groupId>com.chibao.edu</groupId>
                 <artifactId>order-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>common-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
     </dependencies>

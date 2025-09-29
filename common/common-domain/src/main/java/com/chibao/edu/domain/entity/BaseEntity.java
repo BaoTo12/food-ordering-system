@@ -2,13 +2,19 @@ package com.chibao.edu.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Objects;
 
 @Getter
 @Setter
+@SuperBuilder
 public abstract class BaseEntity<ID> {
     private ID id;
+
+    protected BaseEntity() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

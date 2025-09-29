@@ -1,7 +1,6 @@
 package com.chibao.edu.domain.dto.create;
 
 
-import com.chibao.edu.domain.entity.OrderItem;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

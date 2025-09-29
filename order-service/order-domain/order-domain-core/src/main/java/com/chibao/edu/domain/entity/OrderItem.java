@@ -15,10 +15,10 @@ import lombok.experimental.NonFinal;
 public class OrderItem extends BaseEntity<OrderItemId> {
     @NonFinal
     private OrderId orderId;
-    Product product;
+    Product product; // ? what kind of product
     int quantity;
-    Money price;
-    Money subTotal;
+    Money price; // ? price of each product
+    Money subTotal;// ? total price of one kind of product
 
     // TODO implementation methods
     void initializeOrderItem(OrderId orderId, OrderItemId orderItemId) {

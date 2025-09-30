@@ -3,6 +3,7 @@ package com.chibao.edu.domain.mapper;
 import com.chibao.edu.domain.dto.create.CreateOrderCommand;
 import com.chibao.edu.domain.dto.create.CreateOrderResponse;
 import com.chibao.edu.domain.dto.create.OrderAddress;
+import com.chibao.edu.domain.dto.track.TrackOrderResponse;
 import com.chibao.edu.domain.entity.Order;
 import com.chibao.edu.domain.entity.OrderItem;
 import com.chibao.edu.domain.entity.Product;
@@ -63,5 +64,11 @@ public class OrderDataMapper {
                 .build();
     }
 
-
+    public TrackOrderResponse orderToTrackOrderResponse(Order order){
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
+                .build();
+    }
 }

@@ -7,10 +7,12 @@
         <list>
           <option value="kafka-model" />
           <option value="kafka-producer" />
+          <option value="kafka-consumer" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
+          <option value="org.apache.commons:commons-lang3:3.17.0" />
           <option value="org.apache.commons:commons-lang3:3.17.0" />
           <option value="org.apache.commons:commons-lang3:3.17.0" />
         </list>
@@ -19,6 +21,7 @@
         <list>
           <option value="Not exploitable" />
           <option value="In progress" />
+          <option value="Not exploitable" />
         </list>
       </option>
     </inspection_tool>

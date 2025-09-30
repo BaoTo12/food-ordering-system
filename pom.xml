@@ -20,6 +20,7 @@
     <modules>
         <module>order-service</module>
         <module>common</module>
+        <module>infrastructure</module>
     </modules>
 
     <properties>
@@ -32,25 +33,27 @@
         <lombok.version>1.18.30</lombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <mokito-version>5.18.0</mokito-version>
+        <spring-kafka.version>3.1.4</spring-kafka.version>
+        <kafka-avro-serializer.version>7.7.0</kafka-avro-serializer.version>
+        <avro.version>1.12.0</avro.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- Lombok -->
+            <!--* Lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
-
-            <!-- MapStruct -->
+            <!--* MapStruct -->
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
             </dependency>
-
+            <!-- ! Sub modules - START            -->
             <dependency>
                 <groupId>com.chibao.edu</groupId>
                 <artifactId>order-domain-core</artifactId>
@@ -81,6 +84,29 @@
                 <artifactId>common-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!-- ? KAFKA BLOCK - START            -->
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>kafka-producer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>kafka-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>kafka-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- ? KAFKA BLOCK - END            -->
+            <!-- ! Sub modules - END            -->
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
@@ -106,7 +132,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chibao.edu</groupId>
+        <artifactId>kafka</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>kafka-model</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro.version}</version>
+                <configuration>
+                    <!-- * Configure how Avro generates Java code -->
+                    <!-- * Defines how Avro should represent Avro strings in generated code.  -->
+                    <stringType>String</stringType>
+                    <!-- * When true, Avro will support decimal logical type in schemas-->
+                    <enableDecimalLogicalType>true</enableDecimalLogicalType>
+                </configuration>
+                    <!-- * Tells Maven when to run the plugin.-->
+                <executions>
+                    <execution>
+                        <!-- * Run the plugin during the generate-sources phase -->
+                        <!-- * before compilation, so generated classes are available to javac -->
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <!-- * The "schema" goal tells Maven to generate Java classes from Avro schemas -->
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <!-- * Where Avro schema files are located -->
+                            <sourceDirectory>src/main/resources/avro</sourceDirectory>
+                            <!-- * Where the generated Java classes should go -->
+                            <outputDirectory>src/main/java</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

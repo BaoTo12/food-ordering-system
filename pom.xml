@@ -20,6 +20,7 @@
     <modules>
         <module>order-service</module>
         <module>common</module>
+        <module>infrastructure</module>
     </modules>
 
     <properties>
@@ -36,21 +37,20 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Lombok -->
+            <!--* Lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
-
-            <!-- MapStruct -->
+            <!--* MapStruct -->
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
             </dependency>
-
+            <!-- ! Sub modules - START            -->
             <dependency>
                 <groupId>com.chibao.edu</groupId>
                 <artifactId>order-domain-core</artifactId>
@@ -81,6 +81,12 @@
                 <artifactId>common-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- ! Sub modules - END            -->
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>

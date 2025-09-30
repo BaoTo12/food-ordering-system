@@ -33,6 +33,9 @@
         <lombok.version>1.18.30</lombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <mokito-version>5.18.0</mokito-version>
+        <spring-kafka.version>2.8.2</spring-kafka.version>
+        <kafka-arvo-serializer.version>7.0.1</kafka-arvo-serializer.version>
+        <arvo.vesion>1.11.0</arvo.vesion>
     </properties>
 
     <dependencyManagement>
@@ -81,11 +84,28 @@
                 <artifactId>common-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!-- ? KAFKA BLOCK - START            -->
             <dependency>
                 <groupId>com.chibao.edu</groupId>
-                <artifactId>infrastructure</artifactId>
+                <artifactId>kafka-producer</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>kafka-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chibao.edu</groupId>
+                <artifactId>kafka-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- ? KAFKA BLOCK - END            -->
             <!-- ! Sub modules - END            -->
             <dependency>
                 <groupId>ch.qos.logback</groupId>

@@ -11,10 +11,45 @@
 
     <artifactId>kafka-model</artifactId>
 
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro.version}</version>
+                <configuration>
+                    <!-- * Configure how Avro generates Java code -->
+                    <!-- * Defines how Avro should represent Avro strings in generated code.  -->
+                    <stringType>String</stringType>
+                    <!-- * When true, Avro will support decimal logical type in schemas-->
+                    <enableDecimalLogicalType>true</enableDecimalLogicalType>
+                </configuration>
+                    <!-- * Tells Maven when to run the plugin.-->
+                <executions>
+                    <execution>
+                        <!-- * Run the plugin during the generate-sources phase -->
+                        <!-- * before compilation, so generated classes are available to javac -->
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <!-- * The "schema" goal tells Maven to generate Java classes from Avro schemas -->
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <!-- * Where Avro schema files are located -->
+                            <sourceDirectory>src/main/resources/avro</sourceDirectory>
+                            <!-- * Where the generated Java classes should go -->
+                            <outputDirectory>src/main/java</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -33,9 +33,9 @@
         <lombok.version>1.18.30</lombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <mokito-version>5.18.0</mokito-version>
-        <spring-kafka.version>2.8.2</spring-kafka.version>
-        <kafka-arvo-serializer.version>7.0.1</kafka-arvo-serializer.version>
-        <arvo.vesion>1.11.0</arvo.vesion>
+        <spring-kafka.version>3.1.4</spring-kafka.version>
+        <kafka-avro-serializer.version>7.7.0</kafka-avro-serializer.version>
+        <avro.version>1.12.0</avro.version>
     </properties>
 
     <dependencyManagement>
@@ -132,7 +132,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
